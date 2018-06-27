@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+{% if error %}
+    <p>{{error}}</p>
+{% endif %}
+<p>Please enter your phone number (in international format, starting with +) to receive a verification code:</p>
+<form method="post" action="/step2">
+    <input type="tel" name="number" />
+    <input type="submit" value="Send code" />
+</form>
+{% endblock %}
