@@ -33,6 +33,7 @@ $app->post('/step2', function($request, $response) {
     $verify = new MessageBird\Objects\Verify;
     $verify->recipient = $request->getParsedBodyParam('number');
     $verify->template = "Your verification code is %token.";
+    $verify->originator = 'Code';
 
     // Make request to Verify API
     try {
